@@ -8,6 +8,7 @@ import android.view.MenuItem;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 
 public class Game extends Activity {
@@ -78,8 +79,39 @@ public class Game extends Activity {
     }
 
     public void computerMove() {
-
+        int input;
+        int computer;
+        Scanner scan = new Scanner(System.in);
+        System.out.println("1 for rock, 2 for paper, 3 for scissors");
+        input = scan.nextInt();
+        computer = (int)(Math.random()*3+1);
+        if(input==computer){
+            System.out.println("Draw.");
+        }else{
+            if(input==1){
+                if(computer==2){
+                    System.out.println("Computer wins!");
+                }else{
+                    System.out.println("Player wins!");
+                }
+            }
+            if(input==2){
+                if(computer==3){
+                    System.out.println("Computer wins!");
+                }else{
+                    System.out.println("Player wins!");
+                }
+            }
+            if(input==3){
+                if(computer==1){
+                    System.out.println("Computer wins!");
+                }else{
+                    System.out.println("Player wins!");
+                }
+            }
+        }
     }
+}
 
     public void addChoice(int x) {
     }
